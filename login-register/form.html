@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        .Invalid {
+            border: 1px solid red;
+        }
+
+        #regMessage {
+            display: none;
+        }
+
+        .reg-valid {
+            color: green;
+        }
+
+        .reg-valid:before {
+            content: "\2714";
+            font-size: 10px;
+            margin-right: 6px;
+        }
+
+        .reg-invalid {
+            color: red;
+        }
+
+        .reg-invalid:before {
+            content: "\2716";
+            font-size: 10px;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container my-5">
+        <form action="#" class="container login-form needs-validation" novalidate>
+            <fieldset class="fieldset-register">
+                <fieldset class="fieldset-register">
+                    <div class="field-note">
+                        <h3 class="">Personal Information</h3>
+                    </div>
+                    <div class="form-field my-3">
+                        <div class="row g-3">
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">First Name*</label>
+                                <input class="form-control" type="text" name="billing_first_name" required>
+                                <!--  -->
+                                <div class="invalid-feedback">
+                                    Please Enter First Name.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Last Name*</label>
+                                <input class="form-control" type="text" name="billing_last_name" required>
+                                <!--  -->
+                                <div class="invalid-feedback">
+                                    Please Enter Last Name.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Email*</label>
+                                <input class="form-control text-lowercase" type="email" name="billing_email"
+                                    autocomplete="off" id="email" onblur="validateEmail()" onchange="validateEmail()"
+                                    onkeyup="validateEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                                <!--  -->
+                                <div class="invalid-feedback" id="email-error">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Confirm Email*</label>
+                                <input class="form-control text-lowercase" type="text" autocomplete="off"
+                                    id="confirm-email" onblur="validateConfirmEmail()" onchange="validateConfirmEmail()"
+                                    onkeyup="validateConfirmEmail()" required>
+                                <!--  -->
+                                <div class="invalid-feedback" id="confirm-email-error">
+                                    Confirm email does not match.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Password*</label>
+                                <!-- <input class="form-control" type="password" name="password" required> -->
+                                <input type="password" class="form-control" id="regPassword" name="password"
+                                    autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                    required>
+                                <!--  -->
+                                <div class="invalid-feedback">
+                                    Please Enter password (at least 8 characters long).
+                                </div>
+                                <!--  -->
+                                <div id="regMessage">
+                                    <p class="fs-6">Password must contain the following:</p>
+                                    <p id="capital" class="reg-invalid d-inline-block me-2">Uppercase</p>
+                                    <p id="small" class="reg-invalid d-inline-block me-2">lowercase</p>
+                                    <p id="special" class="reg-invalid d-inline-block me-2">special character</p>
+                                    <p id="number" class="reg-invalid d-inline-block me-2">number</p>
+                                    <p id="length" class="reg-invalid d-inline-block me-2">Minimum 8 characters</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Phone Number*</label>
+                                <input class="form-control" id="pno" type="tel" maxlength="10" autocomplete="off"
+                                    pattern="[0-9]{10}" onblur="validatePhoneNumber()" onchange="validatePhoneNumber()"
+                                    onkeyup="validatePhoneNumber()" required>
+                                <!--  -->
+                                <div class="invalid-feedback" id="phone-error">
+                                    Please enter phone number.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="mt-2">
+                    <div class="form-field my-3">
+                        <div class="row g-3">
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Street Address*</label>
+                                <input class="form-control" type="text" name="billing_address_1" required>
+                                <!--  -->
+                                <div class="invalid-feedback">
+                                    Please Enter Street Address.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">City*</label>
+                                <input class="form-control" type="text" name="billing_city" required>
+                                <!--  -->
+                                <div class="invalid-feedback">
+                                    Please Enter city.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Post code*</label>
+                                <input class="form-control" type="text" name="billing_postcode" required>
+                                <!--  -->
+                                <div class="invalid-feedback">
+                                    Please Enter postcode.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Country*</label>
+                                <select name="billing_country" class="form-select" required="">
+                                    <option value="GB" selected>United Kingdom (UK)</option>
+
+                                </select>
+                                <!--  -->
+                                <div class="invalid-feedback">
+                                    Please select a Country.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Date of birth*</label>
+                                <input class="form-control" type="date" name="billing_dob" id="billing_dob" onblur="if (checkAge(this.value)) {
+                                            document.getElementById('age-validation').style = 'display:block;';
+                                        } else {
+                                            document.getElementById('age-validation').style = 'display:none;';
+                                        }" required>
+                                <!--  -->
+                                <div id="age-validation" class="invalid-feedback">
+                                    Please Enter your date of birth <strong>(Your age must not less than 18
+                                        years.)</strong>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">File*</label>
+                                <input class="form-control" type="file" id="fileInput" onchange="validateFile(this)"
+                                    required>
+                                <!--  -->
+                                <div class="invalid-feedback" id="file-error">
+                                    Please upload a file.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="field-choice required">
+                        <input type="checkbox" class="checkbox" required><label for="" class="form-label ms-2">
+                            <span>I accept the <a href="#" target="_blank"><strong>Terms and Conditions</strong></a> and
+                                <a href="#" target="_blank"><strong>Privacy Policy</strong></a>.</span></label>
+                        <!--  -->
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </fieldset>
+                <!--  -->
+                <div id="CheckregPasswordMatch"></div>
+                <div class="action-toolbar text-center mt-5 text-uppercase">
+                    <button type="submit" class="btn btn-dark">Create an account</button>
+                </div>
+        </form>
+    </section>
+    <script>
+        // file validation start
+        function validateFile(input) {
+            const file = input.value;
+            const fileType = file.type;
+            const fileSize = file.size;
+            // Allowed file types
+            const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+            // Maximum file size (in bytes)
+            const maxSize = 10 * 1024 * 1024; // 10 MB
+            const fileError = document.getElementById("file-error");
+
+            if (!allowedTypes.includes(fileType)) {
+                fileError.innerHTML = "Invalid file type. Please select a JPEG, PNG, or PDF file.";
+                input.value = null; // Clear the input
+                return;
+            }
+            if (fileSize > maxSize) {
+                fileError.innerHTML = "File size exceeds the limit of 10 MB. Please select a smaller file.";
+                input.value = null; // Clear the input
+                return;
+            }
+            // Valid file
+            fileError.innerHTML = ""; // Clear any previous error messages
+            // ... your code to upload the file or process it ...
+        }
+
+        // file validation end
+        function validatePhoneNumber() {
+            var PhoneNumber = document.getElementById("pno");
+            var PhoneRegx = /^\d{10}$/;
+            var phone_error = document.getElementById("phone-error");
+            if (!PhoneRegx.test(PhoneNumber.value)) {
+                phone_error.style.display = "block";
+                PhoneNumber.classList.add("Invalid");
+            }
+            else {
+                phone_error.style.display = "none";
+                PhoneNumber.classList.remove("Invalid");
+            }
+        }
+        function validateEmail() {
+            var email = document.getElementById("email");
+            var emailRegex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            var email_error = document.getElementById("email-error");
+            var confirmEmail = document.getElementById("confirm-email");
+            confirmEmail.setAttribute('pattern', email.value);
+            if (!emailRegex.test(email.value)) {
+                email_error.style.display = "block";
+                email.classList.add("Invalid");
+            } else {
+                email_error.style.display = "none";
+                email.classList.remove("Invalid");
+            }
+        }
+        function validateConfirmEmail() {
+            var confirmEmail = document.getElementById("confirm-email");
+            var email = document.getElementById("email");
+            var cemail_error = document.getElementById("confirm-email-error");
+
+            if (email.value !== confirmEmail.value) {
+                cemail_error.style.display = "block";
+                confirmEmail.classList.add("Invalid");
+            } else {
+                cemail_error.style.display = "none";
+                confirmEmail.classList.remove("Invalid");
+            }
+        }
+
+        // <!-- password validation start 
+
+        var myInput = document.getElementById("regPassword");
+        var small = document.getElementById("small");
+        var capital = document.getElementById("capital");
+        var special = document.getElementById("special");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+
+        // When the user clicks on the Password field, show the message box
+        myInput.onfocus = function () {
+            document.getElementById("regMessage").style.display = "block";
+        }
+
+        // When the user clicks outside of the Password field, hide the message box
+        myInput.onblur = function () {
+            document.getElementById("regMessage").style.display = "none";
+        }
+
+        // When the user starts to type something inside the Password field
+        myInput.onkeyup = function () {
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/;
+            if (myInput.value.match(lowerCaseLetters)) {
+                small.classList.remove("reg-invalid");
+                small.classList.add("reg-valid");
+            } else {
+                small.classList.remove("reg-valid");
+                small.classList.add("reg-invalid");
+            }
+
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/;
+            if (myInput.value.match(upperCaseLetters)) {
+                capital.classList.remove("reg-invalid");
+                capital.classList.add("reg-valid");
+            } else {
+                capital.classList.remove("reg-valid");
+                capital.classList.add("reg-invalid");
+            }
+
+            // Validate special character letters
+            var SpecialCharacter = /[!,%,&,@,#,$,^,*,?,_,~]/;
+            if (myInput.value.match(SpecialCharacter)) {
+                special.classList.remove("reg-invalid");
+                special.classList.add("reg-valid");
+            } else {
+                special.classList.remove("reg-valid");
+                special.classList.add("reg-invalid");
+            }
+
+            // Validate numbers
+            var numbers = /[0-9]/;
+            if (myInput.value.match(numbers)) {
+                number.classList.remove("reg-invalid");
+                number.classList.add("reg-valid");
+            } else {
+                number.classList.remove("reg-valid");
+                number.classList.add("reg-invalid");
+            }
+
+            // Validate length
+            if (myInput.value.length >= 8) {
+                length.classList.remove("reg-invalid");
+                length.classList.add("reg-valid");
+            } else {
+                length.classList.remove("reg-valid");
+                length.classList.add("reg-invalid");
+            }
+        }
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add('was-validated');
+                }, false);
+            });
+
+        //   date of birth start
+        const today = new Date();
+        today.setDate(today.getDate() + 1);
+        const minDate = new Date(today.getFullYear() - 120, today.getMonth(), today.getDate());
+        const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+
+        const birthdateInput = document.getElementById('billing_dob');
+        birthdateInput.min = minDate.toISOString().slice(0, 10);
+        birthdateInput.max = maxDate.toISOString().slice(0, 10);
+
+
+        function checkAge(dateOfBirth) {
+            var dobArr = dateOfBirth.split('-');
+            var dob = new Date(parseInt(dobArr[0]), (parseInt(dobArr[1]) - 1), parseInt(dobArr[2]));
+            var ageDifMs = Date.now() - dob.getTime();
+            var ageDate = new Date(ageDifMs); // miliseconds from epoch
+            var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+            return (age < 18);
+        }
+
+//   date of birth end
+    </script>
+</body>
+
+</html>

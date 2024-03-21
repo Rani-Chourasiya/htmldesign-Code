@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Header</title>
+    <style>
+        @media (min-width: 769px) and (max-width: 992px) {
+            .menu .navbar .navbar-toggler {
+                position: absolute;
+                right: -65px;
+                top: -40px;
+            }
+        }
+        @media (max-width: 768px) {
+
+            .subscribe{
+                width: 50%;
+            }
+            .menu .navbar .navbar-toggler {
+                position: absolute;
+                right: 0;
+                top: -40px;
+            }
+
+            .row-content-column {
+                width: auto !important;
+            } 
+            .row-content{
+                display: block !important;
+            }
+            .row-content .row-content-column a img{
+                margin-top: 15px !important;
+                width: 80% !important;
+                margin-left: 35px;
+            }
+            .row-content-column-1{
+                border: none !important;
+                margin: 0 !important;
+            }
+        }
+
+        .subscribe-form {
+            border-radius: 40px;
+            background: #fff;
+            /* border: 1px solid #979797; */
+            padding: 1px;
+            box-shadow: 0px -12px 21px -15px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscribe-form .form-group {
+            position: relative;
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .subscribe-form .form-group input {
+            background: transparent !important;
+            border: none !important;
+            outline: none !important;
+            color: rgba(0, 0, 0, 0.3) !important;
+            font-size: 16px;
+            /* height: 50px; */
+            border-radius: 0;
+        }
+
+        .subscribe-form .form-group .submit {
+            color: #fff !important;
+            display: block;
+            width: 100px;
+            /* height: 50px; */
+            font-size: 14px;
+            background: #7a7a7a !important;
+            border: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <section>
+            <div class="header-wrapper">
+                <div class="bg-dark">
+                    <div class="container-fluid">
+                        <div class="row-content d-flex">
+                            <div class="w-25 row-content-column">
+                                <div class="logo-img mt-lg-4 mt-md-2 mt-4">
+                                    <a class="logo" href=""><img
+                                            src="assets/image/logo2.jpg"
+                                            alt="Staging – Shave &amp; Coster – Staging" class="w-100"></a>
+                                </div>
+                            </div>
+                            <div class="row-content-column-1 mx-4 border-start border-secondary">
+                                <div class="">
+                                    <div class="header-top-menu mt-2">
+                                        <div class="row mx-4">
+                                            <div class="col-md-6 col-lg-6 col-sm-12">
+                                                <div class="">
+                                                    <div class="search">
+                                                        <div class="subscribe">
+                                                            <form action="#" class="subscribe-form">
+                                                                <div class="form-group d-flex">
+                                                                    <input type="search"
+                                                                        class="form-control rounded-left"
+                                                                        placeholder="Search here...">
+                                                                    <input type="submit" value="Search"
+                                                                        class="form-control submit">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6 col-sm-12">
+                                                <div class="float-lg-end float-md-end text-nowrap mt-2">
+                                                    <div class="login-and-icon">
+                                                        <a href="" class="text-decoration-none text-white mt-0">
+                                                            <!-- Register/Login -->
+                                                            <img src="http://staging.tobacconistonline.com/wp-content/uploads/2023/05/loginRegister-2.png"
+                                                                alt="" class="">
+                                                        </a>
+                                                        <a href="" class="text-decoration-none text-white"
+                                                            title="My Wishlist">
+                                                            <i class="fa-regular fa-heart fs-5 icon-color"></i>
+                                                            </i>
+                                                        </a>
+                                                        <a href="" class="text-decoration-none text-white ms-3"
+                                                            title="My Cart">
+                                                            <i
+                                                                class="fa-sharp fa-solid fa-cart-shopping fs-5 icon-color"><sup>0</sup></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="menu">
+                                                <nav
+                                                    class="navbar navbar-expand-lg navbar-light bg-dark position-relative">
+                                                    <div class="container-fluid">
+                                                        <button class="navbar-toggler bg-white" type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#navbarNavDropdown"
+                                                            aria-controls="navbarNavDropdown" aria-expanded="false"
+                                                            aria-label="Toggle navigation">
+                                                            <span class="navbar-toggler-icon"></span>
+                                                        </button>
+                                                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                                            <ul class="navbar-nav navbar-header-menu-title text-nowrap">
+                                                                <li class="nav-item"><a href=""
+                                                                        class="nav-link active text-white">Cigar</a>
+                                                                </li>
+                                                                <li class="nav-item"><a href=""
+                                                                        class="nav-link text-white">Tobacco</a></li>
+                                                                <li class="nav-item"><a href=""
+                                                                        class="nav-link text-white">Pipe</a></li>
+                                                                <li class="nav-item"><a href=""
+                                                                        class="nav-link text-white">Accessories</a></li>
+                                                                <li class="nav-item"><a href=""
+                                                                        class="nav-link text-white">E Cigrattes</a></li>
+                                                                <li class="nav-item"><a href=""
+                                                                        class="nav-link text-white">Cigar gift box</a>
+                                                                </li>
+                                                            </ul>
+                                                            <ul
+                                                                class="navbar-nav navbar-header-menu-title text-nowrap ms-auto">
+                                                                <li class="nav-item"><a href=""
+                                                                        class="nav-link text-white">Contact</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+.btn-color {
+    color: #fff;
+    background-color: #644324;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-color:hover {
+    color: #fff;
+    background-color: #8b4d12;
+}
+
+label.form-label {
+    color: #575757;
+    display: inline;
+}
+a{
+    color: #b97739;
+}
+a:hover{
+    color: #b36d2b;
+}

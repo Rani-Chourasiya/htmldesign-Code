@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Header</title>
+    <style>
+        .subscribe-form {
+            border-radius: 40px;
+            /* background: #c9c9c9; */
+            border: 1px solid #979797;
+            padding: 1px;
+            box-shadow: 0px -12px 21px -15px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscribe-form .form-group {
+            position: relative;
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .subscribe-form .form-group input {
+            background: transparent !important;
+            border: none !important;
+            outline: none !important;
+            color: rgba(0, 0, 0, 0.3) !important;
+            font-size: 16px;
+            height: 50px;
+            border-radius: 0;
+        }
+
+        .subscribe-form .form-group .submit {
+            color: #fff !important;
+            display: block;
+            width: 150px;
+            height: 50px;
+            font-size: 14px;
+            background: #7a7a7a !important;
+            border: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 40px;
+        }
+
+        .icon-color {
+            color: #292929;
+        }
+   /* grid css */
+   .showcase {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: black;
+}
+
+.showcase .overlay {
+  opacity: 0.7;
+}
+.showcase:hover .overlay {
+  opacity: 0;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <section>
+            <div class="header-wrapper">
+                <div class="top-header bg-dark py-2">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                                <div class="mx-5">
+                                    <a href="" class="text-decoration-none text-white"><i class="fas fa-phone me-2"></i>
+                                        0118 9595670</a>
+                                    <a href="" class="text-decoration-none text-white"><i
+                                            class="fas fa-envelope me-2 ms-4"></i>info@example.com</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="float-lg-end float-md-end mx-5">
+                                    <a href="" class="text-decoration-none text-white">
+                                        Register/Login
+                                        <!-- <img src="http://staging.tobacconistonline.com/wp-content/uploads/2023/05/loginRegister-2.png" alt="" class=""> -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle-header">
+                    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 col-sm-12">
+                                    <div class="logo-img my-md-3 me-lg-5">
+                                        <a class="logo" href=""><img
+                                                src="assets/image/logo2.jpg"
+                                                alt="Staging – Shave &amp; Coster – Staging" class="w-100"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-lg-5 col-sm-12">
+                                    <div class="search mt-3 mb-md-2 ms-lg-5">
+                                        <div class="subscribe">
+                                            <form action="#" class="subscribe-form">
+                                                <div class="form-group d-flex">
+                                                    <input type="search" class="form-control rounded-left"
+                                                        placeholder="Search here...">
+                                                    <input type="submit" value="Search"
+                                                        class="form-control submit px-3">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-sm-12">
+                                    <div class="header-icon mt-md-4 mt-2 float-lg-end float-md-center mx-lg-5 mx-md-5 mx-2">
+                                        <a href="" class="text-decoration-none" title="My Wishlist">
+                                            <i class="fa-regular fa-heart fs-3 icon-color"></i>
+                                            </i>
+                                        </a>
+                                        <a href="" class="text-decoration-none ms-3" title="My Cart">
+                                            <i
+                                                class="fa-sharp fa-solid fa-cart-shopping fs-3 icon-color"><sup>0</sup></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </nav> -->
+                </div>
+                <div class="header-menu">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+                        <div class="container-fluid">
+                          <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <ul class="navbar-nav navbar-header-menu-title mx-lg-5">
+                                <li class="nav-item"><a href="" class="nav-link text-white">Home</a></li>
+                            </ul>
+                            <ul class="navbar-nav navbar-header-menu-title nav-justified-center mx-auto">
+                                <li class="nav-item"><a href="" class="nav-link text-white">Cigar</a></li>
+                                <li class="nav-item"><a href="" class="nav-link text-white">Tobacco</a></li>
+                                <li class="nav-item"><a href="" class="nav-link text-white">Pipe</a></li>
+                                <li class="nav-item"><a href="" class="nav-link text-white">Accessories</a></li>
+                                <li class="nav-item"><a href="" class="nav-link text-white">E Cigrattes</a></li>
+                                <li class="nav-item"><a href="" class="nav-link text-white">Cigar gift box</a></li>
+                            </ul>
+                            <ul class="navbar-nav navbar-header-menu-title float-lg-end mx-lg-5">
+                                <li class="nav-item"><a href="" class="nav-link text-white">Contact</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+<main>
+    <section class="top-banner-img">
+        <div class="">
+            <img src="" alt="">
+        </div>
+    </section>
+    <!-- 2nd section -->
+    <section class="slider-wrapper">
+        <div class="slider-wrapper-top">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/image/slider/Davidoff-Banner.jpg"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/image/slider/New-world-cigar.jpg"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/image/slider/Romeo-julietta2.jpg"
+                            class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 3rd section -->
+    <section class="grid-info">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Static Single Item Start -->
+                <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-3  static-area-shadow">
+                    <div class="single-static position-relative">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/image/static-icons-1.png" alt=""
+                            class="img-responsive me-3">
+                        <div class="single-static-meta position-absolute d-inline-block">
+                            <h4 class="static-area-heading mb-0 fw-bold">Free Shipping</h4>
+                            <p class="static-area-para text-nowrap">On all orders over £75.00</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Static Single Item End -->
+                <!-- Static Single Item Start -->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3  static-area-shadow">
+                    <div class="single-static position-relative">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/image/static-icons-2.png" alt=""
+                            class="me-3">
+                        <div class="single-static-meta position-absolute d-inline-block">
+                            <h4 class="static-area-heading mb-0 fw-bold">Free Returns</h4>
+                            <p class="static-area-para text-nowrap">Returns are free within 9 days</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Static Single Item End -->
+                <!-- Static Single Item Start -->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3  static-area-shadow">
+                    <div class="single-static position-relative">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/image/static-icons-4.png" alt=""
+                            class=" me-3">
+                        <div class="single-static-meta position-absolute d-inline-block">
+                            <h4 class="static-area-heading mb-0 fw-bold">Support 24/7</h4>
+                            <p class="static-area-para text-nowrap">Contact us 24 hours a day</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Static Single Item End -->
+                <!-- Static Single Item Start -->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3  static-area-shadow">
+                    <div class=" position-relative">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/image/static-icons-3.png" alt=""
+                            class=" me-3">
+                        <div class="position-absolute d-inline-block">
+                            <h4 class="static-area-heading mb-0 fw-bold">100% Payment Secure</h4>
+                            <p class="static-area-para text-nowrap">Your payment are safe with us.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Static Single Item End -->
+            </div>
+        </div>
+    </section>
+    <!-- 4th section -->
+    <section class="banner-area-wrapper my-5">
+        <div class="container-fluid">
+            <div class="row g-3">
+                <!-- 1st -->
+                <div class="col-md-6 col-lg-4 col-sm-12">
+                    <div class="showcase">
+                        <a href="">
+                            <img src="https://staging.tobacconistonline.com/wp-content/uploads/2022/12/TOBACCO.jpg"
+                            alt="Picture" class="w-100">
+                        </a>
+                        <div class="overlay">
+                            <h2 class="text">Background Overlay</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2nd -->
+                <div class="col-md-6 col-lg-4 col-sm-12">
+                    <div class="showcase">
+                        <a href="">
+                            <img src="https://staging.tobacconistonline.com/wp-content/uploads/2022/12/TOBACCO.jpg"
+                            alt="Picture" class="w-100">
+                        </a>
+                        <div class="overlay">
+                            <h2 class="text">Background Overlay</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3rd -->
+                <div class="col-md-6 col-lg-4 col-sm-12">
+                    <div class="showcase">
+                        <a href="">
+                            <img src="https://staging.tobacconistonline.com/wp-content/uploads/2022/12/TOBACCO.jpg"
+                            alt="Picture" class="w-100">
+                        </a>
+                        <div class="overlay">
+                            <h2 class="text">Background Overlay</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="my-5"></section>
+</main>
+</body>
+
+</html>

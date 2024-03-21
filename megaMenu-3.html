@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        a:hover{
+            color: #fff;
+            background-color: #fb9902;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .megamenu-fw {
+            position: static !important;
+        }
+
+        .megamenu-fw .dropdown-menu {
+            width: 90%;
+            left: 30px;
+            /* right: 0; */
+            padding: 20px;
+            background: ghostwhite;
+        }
+
+        .megamenu-fw .dropdown-menu ul li a {
+            display: block;
+        }
+
+        ul.navbar-nav li:hover .dropdown-menu {
+            display: block;
+            padding-top: 20px;
+        }
+
+        /* 21-05-23 */
+        .dropdown-toggle::after {
+            display: none;
+            /* Hide the toggle icon by default */
+        }
+
+        @media (max-width: 991px) {
+            .dropdown-toggle::after {
+                display: inline-block;
+                /* Show the toggle icon for tablet and mobile devices */
+                float: right;
+                font-size: 25px;
+            }
+
+            .after-login .navbar-nav .dropdown-toggle::after {
+                margin-top: 5px;
+            }
+
+        }
+
+        .tab-content h5 {
+            background-color: #fb9902;
+            color: #fff;
+            padding: 10px 15px;
+            margin-bottom: 25px;
+        }
+
+        .nav-tabbedmenu li a:hover {
+            background-color: #fb9902;
+            color: #fff !important;
+            padding: 10px 20px !important;
+        }
+
+        .nav-tabbedmenu li a.active {
+            border: 1px solid #fb9902;
+            padding: 10px 20px !important;
+        }
+
+        .megamenu-tabmenu .megamenu-tabbedmenu .col-menu {
+            padding: 0 15px;
+        }
+
+        .megamenu-tabmenu .megamenu-tabbedmenu .col-menu {
+            padding: 0 30px;
+            margin: 0 -0.5px;
+            border-left: solid 1px #f0f0f0;
+            border-right: solid 1px #f0f0f0;
+        }
+
+        .megamenu-tabbedmenu .col-menu .title {
+            color: #fb9902;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-top: 15px;
+            border-bottom: 1px solid;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div class="navBar-Wrapper-menu">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav exo-menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown megamenu-fw">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" aria-current="page"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-bars"></i>
+                                Category</a>
+                            <ul class="dropdown-menu megamenu-content mt-0" aria-labelledby="navbarDropdown">
+                                <li class="megamenu-tabmenu">
+                                    <div class="megamenu-tabbedmenu d-flex align-items-start row">
+                                        <ul class="nav flex-column nav-tabbedmenu col-lg-3" id="v-pills-tab"
+                                            role="tablist" aria-orientation="vertical">
+                                            <li class="nav-item" role="presentation">
+                                                <a href="#tab-1" class="nav-link text-dark active" id="v-pills-home-tab"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button"
+                                                    role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a href="#tab-2" class="nav-link text-dark" id="v-pills-profile-tab"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button"
+                                                    role="tab" aria-controls="v-pills-profile"
+                                                    aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a href="#tab-3" class="nav-link text-dark" id="v-pills-contact-tab"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-contact" type="button"
+                                                    role="tab" aria-controls="v-pills-contact"
+                                                    aria-selected="false">Contact</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a href="#tab-4" class="nav-link text-dark" id="v-pills-contact-tab-1"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-contact-1"
+                                                    type="button" role="tab" aria-controls="v-pills-contact-1"
+                                                    aria-selected="false">Contact-1</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a href="#tab-4" class="nav-link text-dark" id="v-pills-contact-tab-2"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-contact-2"
+                                                    type="button" role="tab" aria-controls="v-pills-contact-2"
+                                                    aria-selected="false">Contact-2</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content col-lg-9" id="v-pills-tabContent">
+                                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                                aria-labelledby="v-pills-home-tab">
+                                                <ul class="list-unstyled megamenu">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <h5>Men's Wear</h5>
+                                                            </div>
+                                                            <div class="col-menu col-sm-6 col-md-3">
+                                                                <h4 class="title">Tops</h4>
+                                                                <div class="content">
+                                                                    <ul class="menu-col">
+                                                                        <li><a href="#">Shirts <span
+                                                                                    class="tag-label label-green">New</span><span
+                                                                                    class="waves green width54"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">T-Shirts</a></li>
+                                                                        <li><a href="#">Suits</a></li>
+                                                                        <li><a href="#">Blazer <span
+                                                                                    class="tag-label label-magenta">Sale</span><span
+                                                                                    class="waves magenta width54"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Shirts <span
+                                                                                    class="tag-label label-brown">Old</span><span
+                                                                                    class="waves brown width50"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">T-Shirts</a></li>
+                                                                        <li><a href="#">Blazer</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-menu col-sm-6 col-md-3">
+                                                                <h4 class="title">Bottoms</h4>
+                                                                <div class="content">
+                                                                    <ul class="menu-col">
+                                                                        <li><a href="#">Pants</a></li>
+                                                                        <li><a href="#">Jeans <span
+                                                                                    class="tag-label label-green">New</span><span
+                                                                                    class="waves green width54"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Shorts</a></li>
+                                                                        <li><a href="#">Clients</a></li>
+                                                                        <li><a href="#">Jeans <span
+                                                                                    class="tag-label label-red">Hot</span><span
+                                                                                    class="waves red width50"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Skirts <span
+                                                                                    class="tag-label label-magenta">30%
+                                                                                    Off</span><span
+                                                                                    class="waves magenta width70"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Pants</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-menu col-sm-6 col-md-3">
+                                                                <h4 class="title">Outwear</h4>
+                                                                <div class="content">
+                                                                    <ul class="menu-col">
+                                                                        <li><a href="#">Jackets</a></li>
+                                                                        <li><a href="#">Cardigans <span
+                                                                                    class="tag-label label-green">New</span><span
+                                                                                    class="waves green width54"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Shorts</a></li>
+                                                                        <li><a href="#">Jackets</a></li>
+                                                                        <li><a href="#">Blazers <span
+                                                                                    class="tag-label label-red">Hot</span><span
+                                                                                    class="waves red width50"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Skirts <span
+                                                                                    class="tag-label label-magenta">30%
+                                                                                    Off</span><span
+                                                                                    class="waves magenta width70"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Pants</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-menu col-sm-6 col-md-3">
+                                                                <div class="image-box"><img src="images/product/m1.jpg"
+                                                                        alt="men">
+                                                                    <div><button class="btn btn-primary"
+                                                                            type="button">$44.99</button> <button
+                                                                            class="btn btn-default btn-cart"
+                                                                            type="button"><i class="fas fa-heart"></i>
+                                                                            Wishlist</button></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                                aria-labelledby="v-pills-profile-tab">
+                                                <ul class="list-unstyled megamenu">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <h5>Women's Wear</h5>
+                                                            </div>
+                                                            <div class="col-menu col-sm-6 col-md-3">
+                                                                <div class="image-box"><img src="images/product/f1.jpg"
+                                                                        alt="women">
+                                                                    <div><button class="btn btn-primary"
+                                                                            type="button">$89.99</button> <button
+                                                                            class="btn btn-default btn-cart"
+                                                                            type="button"><i class="fas fa-heart"></i>
+                                                                            Wishlist</button></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-menu col-sm-6 col-md-3">
+                                                                <h4 class="title">Tops</h4>
+                                                                <div class="content">
+                                                                    <ul class="menu-col">
+                                                                        <li><a href="#">Shirts <span
+                                                                                    class="tag-label label-green">New</span><span
+                                                                                    class="waves green width54"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">T-Shirts</a></li>
+                                                                        <li><a href="#">Suits</a></li>
+                                                                        <li><a href="#">Blazer <span
+                                                                                    class="tag-label label-magenta">Sale</span><span
+                                                                                    class="waves magenta width54"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Shirts <span
+                                                                                    class="tag-label label-brown">Old</span><span
+                                                                                    class="waves brown width50"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">T-Shirts</a></li>
+                                                                        <li><a href="#">Blazer</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-menu col-sm-6 col-md-3">
+                                                                <h4 class="title">Bottoms</h4>
+                                                                <div class="content">
+                                                                    <ul class="menu-col">
+                                                                        <li><a href="#">Pants</a></li>
+                                                                        <li><a href="#">Jeans <span
+                                                                                    class="tag-label label-green">New</span><span
+                                                                                    class="waves green width54"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Shorts</a></li>
+                                                                        <li><a href="#">Clients</a></li>
+                                                                        <li><a href="#">Jeans <span
+                                                                                    class="tag-label label-red">Hot</span><span
+                                                                                    class="waves red width50"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Skirts <span
+                                                                                    class="tag-label label-magenta">30%
+                                                                                    Off</span><span
+                                                                                    class="waves magenta width70"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Pants</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-menu col-sm-6 col-md-3">
+                                                                <h4 class="title">Outwear</h4>
+                                                                <div class="content">
+                                                                    <ul class="menu-col">
+                                                                        <li><a href="#">Jackets</a></li>
+                                                                        <li><a href="#">Cardigans <span
+                                                                                    class="tag-label label-green">New</span><span
+                                                                                    class="waves green width54"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Shorts</a></li>
+                                                                        <li><a href="#">Jackets</a></li>
+                                                                        <li><a href="#">Blazers <span
+                                                                                    class="tag-label label-red">Hot</span><span
+                                                                                    class="waves red width50"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Skirts <span
+                                                                                    class="tag-label label-magenta">30%
+                                                                                    Off</span><span
+                                                                                    class="waves magenta width70"></span></a>
+                                                                        </li>
+                                                                        <li><a href="#">Pants</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="banner-image col-sm-12 col-md-12"><img
+                                                                    src="images/product/wb-1.jpg" alt="banner"></div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane fade" id="v-pills-contact" role="tabpanel"
+                                                aria-labelledby="v-pills-contact-tab">...</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">menu-2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">menu-3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script>
+        jQuery(document).ready(function () {
+            // Show/hide the dropdown on hover for desktop screens
+            jQuery(".dropdown").on("mouseenter", function () {
+                if (jQuery(window).width() >= 992) {
+                    jQuery(this).find(".dropdown-menu").show();
+                }
+            }).on("mouseleave", function () {
+                if (jQuery(window).width() >= 992) {
+                    jQuery(this).find(".dropdown-menu").hide();
+                }
+            });
+
+            // Show/hide the dropdown on click for tablet and mobile devices
+            jQuery(".dropdown > a.nav-link").on("click", function (e) {
+                if (jQuery(window).width() < 992) {
+                    e.preventDefault();
+                    jQuery(this).parent().find(".dropdown-menu").toggle();
+                }
+            });
+
+            // Hide the dropdown when clicking outside
+            jQuery(document).on("click", function (e) {
+                if (jQuery(window).width() < 992) {
+                    if (!jQuery(e.target).closest(".dropdown").length) {
+                        jQuery(".dropdown-menu").hide();
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

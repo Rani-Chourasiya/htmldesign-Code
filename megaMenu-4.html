@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        a:hover {
+            color: #fff;
+            background-color: #fb9902;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .megamenu-fw {
+            position: static !important;
+        }
+
+        .megamenu-fw .dropdown-menu {
+            width: 90%;
+            left: 30px;
+            /* right: 0; */
+            padding: 20px;
+            background: ghostwhite;
+        }
+
+        .tab-content h5 {
+            background-color: #fb9902;
+            color: #fff;
+            padding: 10px 15px;
+            margin-bottom: 25px;
+        }
+
+        .nav-tabbedmenu li a:hover {
+            background-color: #fb9902;
+            color: #fff !important;
+            padding: 10px 20px !important;
+        }
+
+        .nav-tabbedmenu li a.active {
+            border: 1px solid #fb9902;
+            padding: 10px 20px !important;
+        }
+
+        .megamenu-tabmenu .megamenu-tabbedmenu .col-menu {
+            padding: 0 15px;
+        }
+
+        .megamenu-tabmenu .megamenu-tabbedmenu .col-menu {
+            padding: 0 30px;
+            margin: 0 -0.5px;
+            border-left: solid 1px #f0f0f0;
+            border-right: solid 1px #f0f0f0;
+        }
+
+        .megamenu-tabbedmenu .col-menu .title {
+            color: #fb9902;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-top: 15px;
+            border-bottom: 1px solid;
+            padding-bottom: 5px;
+        }
+
+        .megamenu-tabbedmenu .inner-tab-pane .inner-nav-tabbedmenu li a:hover {
+            background-color: #fb9902;
+            color: #fff !important;
+            padding: 10px 20px !important;
+            border-radius: inherit !important;
+        }
+
+        .megamenu-tabbedmenu .inner-tab-pane .inner-nav-tabbedmenu li a.active {
+            background-color: #fb9902;
+            color: #fff !important;
+            padding: 10px 20px !important;
+            border-radius: inherit !important;
+        }
+
+        .inner-tab-content h5 {
+            background-color: #fb9902;
+            color: #fff;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+        
+/* brand slider css start */
+.brand-shape-divider {
+    border-bottom: 3px solid #adb5bdc4;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+.slider-inner{
+    padding-left: 6rem;
+    padding-right: 4rem;
+}
+
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item>div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+    transform: translateX(0);
+}
+
+/* brand slider css end */
+    </style>
+</head>
+
+<body class="">
+    <div class="navBar-Wrapper-menu">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown megamenu-fw">
+                            <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Mega Menu <span class="caret"></span></a>
+                            <ul class="dropdown-menu megamenu-content" role="menu">
+                                <li class="megamenu-tabmenu">
+                                    <div class="megamenu-tabbedmenu d-flex align-items-start row">
+                                        <ul class="nav flex-column nav-tabbedmenu col-lg-3" id="v-pills-tab"
+                                            role="tablist" aria-orientation="vertical">
+                                            <li class="nav-item" role="presentation">
+                                                <a href="#tab-1" class="nav-link text-dark active" id="v-pills-home-tab"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button"
+                                                    role="tab" aria-controls="v-pills-home" aria-selected="true">Top
+                                                    selling Product</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a href="#tab-2" class="nav-link text-dark" id="v-pills-profile-tab"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+                                                    type="button" role="tab" aria-controls="v-pills-profile"
+                                                    aria-selected="false">Blog</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a href="#tab-3" class="nav-link text-dark" id="v-pills-contact-tab"
+                                                    data-bs-toggle="pill" data-bs-target="#v-pills-contact"
+                                                    type="button" role="tab" aria-controls="v-pills-contact"
+                                                    aria-selected="false">All Category</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content col-lg-9" id="v-pills-tabContent">
+                                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                                aria-labelledby="v-pills-home-tab">
+                                                <div class="container-fluid">
+                                                    <h5>Top selling product</h5>
+                                                    <div class="row mx-auto my-auto justify-content-center">
+                                                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                                            <div class="carousel-inner slider-inner">
+                                                                <div class="carousel-item active text-light">
+                                                                    <div class="col-md-3 col-lg-3 col-sm-12">
+                                                                        <div class="logo-image">
+                                                                            <a href=""><img
+                                                                                    src="https://custom-design.webtechintegration.com/wp-content/uploads/2023/05//Rockypatel-1024x1024-1.jpg"
+                                                                                    title="Alsbo Pipe Tobacco" alt="Alsbo Pipe Tobacco" class="w-75"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <div class="col-md-3 col-lg-3 col-sm-12">
+                                                                        <div class="logo-image">
+                                                                            <a href=""><img
+                                                                                    src="https://custom-design.webtechintegration.com/wp-content/uploads/2023/05//oscar-valladares-logo-1024x1024-1.jpg"
+                                                                                    title="Alsbo Pipe Tobacco" alt="Alsbo Pipe Tobacco" class="w-75"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <div class="col-md-3 col-lg-3 col-sm-12">
+                                                                        <div class="logo-image">
+                                                                            <a href=""><img
+                                                                                    src="https://custom-design.webtechintegration.com/wp-content/uploads/2023/05//juliany-1024x1024-1.jpg"
+                                                                                    title="Alsbo Pipe Tobacco" alt="Alsbo Pipe Tobacco" class="w-75"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <div class="col-md-3 col-lg-3 col-sm-12">
+                                                                        <div class="logo-image">
+                                                                            <a href=""><img
+                                                                                    src="https://custom-design.webtechintegration.com/wp-content/uploads/2023/05//HUpmann_dark.jpg"
+                                                                                    title="Alsbo Pipe Tobacco" alt="Alsbo Pipe Tobacco" class="w-75"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                                                                data-bs-slide="prev">
+                                                                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                                                            </button>
+                                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+                                                                data-bs-slide="next">
+                                                                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                                aria-labelledby="v-pills-profile-tab">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h5>Blog</h5>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="card" style="width: 18rem;">
+                                                                <img src="..." class="card-img-top" alt="...">
+                                                                <div class="card-body">
+                                                                  <h4 class="card-title">Card title</h4>
+                                                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                                </div>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="card" style="width: 18rem;">
+                                                                <img src="..." class="card-img-top" alt="...">
+                                                                <div class="card-body">
+                                                                  <h4 class="card-title">Card title</h4>
+                                                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                                </div>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="card" style="width: 18rem;">
+                                                                <img src="..." class="card-img-top" alt="...">
+                                                                <div class="card-body">
+                                                                  <h4 class="card-title">Card title</h4>
+                                                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                                </div>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade inner-tab-pane" id="v-pills-contact"
+                                                role="tabpanel" aria-labelledby="v-pills-contact-tab">
+                                                <!-- inner tab start -->
+                                                <ul class="nav nav-pills inner-nav-tabbedmenu justify-content-around" id="inner-pills-tab"
+                                                    role="tablist">
+                                                    <li class="nav-item" role="presentation">
+                                                        <a href="" class="nav-link text-dark active"
+                                                            id="inner-pills-home-tab" data-bs-toggle="pill"
+                                                            data-bs-target="#inner-pills-home" type="button" role="tab"
+                                                            aria-controls="inner-pills-home"
+                                                            aria-selected="true">Home</a>
+                                                    </li>
+                                                    <li class="nav-item" role="presentation">
+                                                        <a href="" class="nav-link text-dark"
+                                                            id="inner-pills-profile-tab" data-bs-toggle="pill"
+                                                            data-bs-target="#inner-pills-profile" type="button"
+                                                            role="tab" aria-controls="inner-pills-profile"
+                                                            aria-selected="false">Profile</a>
+                                                    </li>
+                                                    <li class="nav-item" role="presentation">
+                                                        <a href="" class="nav-link text-dark"
+                                                            id="inner-pills-contact-tab" data-bs-toggle="pill"
+                                                            data-bs-target="#inner-pills-contact" type="button"
+                                                            role="tab" aria-controls="inner-pills-contact"
+                                                            aria-selected="false">Contact</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content inner-tab-content" id="inner-pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="inner-pills-home"
+                                                        role="tabpanel" aria-labelledby="inner-pills-home-tab">
+                                                        <ul class="list-unstyled megamenu">
+                                                            <li>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <h5>Men's Wear</h5>
+                                                                    </div>
+                                                                    <div class="col-menu col-sm-6 col-md-3">
+                                                                        <h4 class="title">Tops</h4>
+                                                                        <div class="content">
+                                                                            <ul class="menu-col">
+                                                                                <li><a href="#">Shirts <span
+                                                                                            class="tag-label label-green">New</span><span
+                                                                                            class="waves green width54"></span></a>
+                                                                                </li>
+                                                                                <li><a href="#">T-Shirts</a></li>
+                                                                                <li><a href="#">Suits</a></li>
+                                                                                <li><a href="#">Blazer <span
+                                                                                            class="tag-label label-magenta">Sale</span><span
+                                                                                            class="waves magenta width54"></span></a>
+                                                                                </li>
+                                                                                <li><a href="#">Shirts <span
+                                                                                            class="tag-label label-brown">Old</span><span
+                                                                                            class="waves brown width50"></span></a>
+                                                                                </li>
+                                                                                <li><a href="#">T-Shirts</a></li>
+                                                                                <li><a href="#">Blazer</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-menu col-sm-6 col-md-3">
+                                                                        <h4 class="title">Bottoms</h4>
+                                                                        <div class="content">
+                                                                            <ul class="menu-col">
+                                                                                <li><a href="#">Pants</a></li>
+                                                                                <li><a href="#">Jeans <span
+                                                                                            class="tag-label label-green">New</span><span
+                                                                                            class="waves green width54"></span></a>
+                                                                                </li>
+                                                                                <li><a href="#">Shorts</a></li>
+                                                                                <li><a href="#">Clients</a></li>
+                                                                                <li><a href="#">Jeans <span
+                                                                                            class="tag-label label-red">Hot</span><span
+                                                                                            class="waves red width50"></span></a>
+                                                                                </li>
+                                                                                <li><a href="#">Skirts <span
+                                                                                            class="tag-label label-magenta">30%
+                                                                                            Off</span><span
+                                                                                            class="waves magenta width70"></span></a>
+                                                                                </li>
+                                                                                <li><a href="#">Pants</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-menu col-sm-6 col-md-3">
+                                                                        <h4 class="title">Outwear</h4>
+                                                                        <div class="content">
+                                                                            <ul class="menu-col">
+                                                                                <li><a href="#">Jackets</a></li>
+                                                                                <li><a href="#">Cardigans <span
+                                                                                            class="tag-label label-green">New</span><span
+                                                                                            class="waves green width54"></span></a>
+                                                                                </li>
+                                                                                <li><a href="#">Shorts</a></li>
+                                                                                <li><a href="#">Jackets</a></li>
+                                                                                <li><a href="#">Blazers <span
+                                                                                            class="tag-label label-red">Hot</span><span
+                                                                                            class="waves red width50"></span></a>
+                                                                                </li>
+                                                                                <li><a href="#">Skirts <span
+                                                                                            class="tag-label label-magenta">30%
+                                                                                            Off</span><span
+                                                                                            class="waves magenta width70"></span></a>
+                                                                                </li>
+                                                                                <li><a href="#">Pants</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-menu col-sm-6 col-md-3">
+                                                                        <div class="image-box"><img
+                                                                                src="images/product/m1.jpg" alt="men">
+                                                                            <div><button class="btn btn-primary"
+                                                                                    type="button">$44.99</button>
+                                                                                <button class="btn btn-default btn-cart"
+                                                                                    type="button"><i
+                                                                                        class="fas fa-heart"></i>
+                                                                                    Wishlist</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="inner-pills-profile" role="tabpanel"
+                                                        aria-labelledby="inner-pills-profile-tab">...2</div>
+                                                    <div class="tab-pane fade" id="inner-pills-contact" role="tabpanel"
+                                                        aria-labelledby="inner-pills-contact-tab">...3</div>
+                                                </div>
+                                                <!-- inner tab end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script>
+        jQuery(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).fadeIn("fast");
+                },
+                function () {
+                    $('.dropdown-menu', this).fadeOut("fast");
+                });
+        });
+        
+// brand slider js start
+ let items = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 4
+    let next = el.nextElementSibling
+    for (var i=1; i<minPerSlide; i++) {
+        if (!next) {
+    // wrap carousel by using first child
+    next = items[0]
+}
+let cloneChild = next.cloneNode(true)
+el.appendChild(cloneChild.children[0])
+next = next.nextElementSibling
+}
+})
+// brand slider js end
+    </script>
+</body>
+
+</html>

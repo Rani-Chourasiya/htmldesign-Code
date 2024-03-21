@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>grid</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        .product-grid .product-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-grid.new .product-image a.image:before,
+        .product-grid .product-image a.image:after {
+            content: '';
+            background-color: #ffd800;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            position: absolute;
+            right: -25px;
+            top: -25px;
+        }
+
+        .product-grid .product-image a.image:after {
+            height: 120px;
+            width: 120px;
+            right: auto;
+            left: -120px;
+            top: auto;
+            bottom: -120px;
+            transition: all 0.3s ease;
+        }
+
+        .product-grid:hover .product-image a.image:after {
+            left: -25px;
+            bottom: -40px;
+        }
+
+        .product-grid .product-new-label {
+            color: #000;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: absolute;
+            top: 7px;
+            right: 5px;
+        }
+
+        .product-grid .product-links {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: absolute;
+            bottom: 7px;
+            right: 10px;
+        }
+
+        .product-grid .product-links li {
+            margin: 0 0 4px;
+            transform: translateX(100px);
+            transition: all 0.5s ease 0s;
+        }
+
+        .product-grid:hover .product-links li {
+            transform: translateX(0);
+        }
+
+            /* .product-grid:hover .product-links li:nth-child(2) {
+        transition-delay: 0.1s;
+    }
+
+    .product-grid:hover .product-links li:nth-child(3) {
+        transition-delay: 0.2s;
+    }
+
+    .product-grid .product-links li:last-child {
+        margin: 0;
+    } */
+
+        .product-grid .product-links li a {
+            color: #000;
+            background: rgba(255, 216, 0, 0.2);
+            font-size: 20px;
+            text-align: center;
+            line-height: 48px;
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            display: block;
+            position: relative;
+            transition: all 200ms ease 0s;
+        }
+
+        .product-grid .product-links li a:hover {
+            background: #ffd800;
+        }
+
+        .product-grid .product-links li a:before,
+        .product-grid .product-links li a:after {
+            content: attr(data-tip);
+            color: #fff;
+            background-color: #000;
+            font-size: 14px;
+            line-height: 22px;
+            border-radius: 0;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+            transform: translateY(-50%);
+            visibility: hidden;
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .product-grid .product-links li a:after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    border-radius: 0;
+    transform: translateY(-50%) rotate(45deg);
+    right: 58px;
+    z-index: -1;
+}
+
+        .product-grid .product-links li a:hover:before,
+        .product-grid .product-links li a:hover:after {
+            visibility: visible;
+        }
+
+        
+.product-grid .product-links li a:hover:before {
+    right: 55px;
+}
+
+.product-grid .product-links li a:hover:after {
+    right: 53px;
+}
+
+        .product-grid .price {
+            color: #000;
+            font-size: 22px;
+            font-weight: 700;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .product-grid .product-content {
+    padding: 12px 0 0;
+    position: relative;
+}
+
+        .product-grid .title {
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: capitalize;
+            margin: 0 0 10px;
+        }
+
+        .product-grid .title a:hover {
+            color: #666;
+        }
+
+        .product-content .rating {
+            padding: 0;
+            margin: 0 0 7px 0;
+            list-style: none;
+            color: #ffba00;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .product-grid .rating li.disable {
+            color: #b6b3b0;
+        }
+
+        @media screen and (max-width:990px) {
+            .product-grid {
+                margin: 0 0 30px;
+            }
+        }
+    </style>
+</head>
+
+<body class="">
+    <section class="grid-wrap mt-5  ">
+        <div class="container justify-content-center">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+                        <div class="product-image">
+                            <a href="#" class="image">
+                                <img class="w-100" src="https://i.imgur.com/HxEEu5g.jpg">
+                            </a>
+                            <ul class="product-links">
+                                <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                                <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
+                            </ul>
+                            <div class="price">$20.00</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">Women's T-Shirt</a></h3>
+                            <ul class="rating">
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star disable"></li>
+                                <li class="fas fa-star disable"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="product-grid new">
+                        <div class="product-image">
+                            <a href="#" class="image">
+                                <img class="w-100" src="https://i.imgur.com/HxEEu5g.jpg">
+                            </a>
+                            <span class="product-new-label">New</span>
+                            <ul class="product-links">
+                                <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                                <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
+                            </ul>
+                            <div class="price">$23.00</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">Women's Top</a></h3>
+                            <ul class="rating">
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star disable"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="product-grid">
+                        <div class="product-image">
+                            <a href="#" class="image">
+                                <img class="w-100" src="https://i.imgur.com/HxEEu5g.jpg">
+                            </a>
+                            <ul class="product-links">
+                                <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                                <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
+                            </ul>
+                            <div class="price">$20.00</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">Women's T-Shirt</a></h3>
+                            <ul class="rating">
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star disable"></li>
+                                <li class="fas fa-star disable"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="product-grid new">
+                        <div class="product-image">
+                            <a href="#" class="image">
+                                <img class="w-100" src="https://i.imgur.com/HxEEu5g.jpg">
+                            </a>
+                            <span class="product-new-label">New</span>
+                            <ul class="product-links">
+                                <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                                <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
+                            </ul>
+                            <div class="price">$23.00</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">Women's Top</a></h3>
+                            <ul class="rating">
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star disable"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

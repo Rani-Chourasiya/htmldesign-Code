@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/tobacconist.css">
+    <style>
+        #regMessage {
+            display: none;
+        }
+
+        .reg-valid {
+            color: green;
+        }
+
+        .reg-valid:before {
+            content: "\2714";
+            font-size: 10px;
+            margin-right: 6px;
+        }
+
+        .reg-invalid {
+            color: red;
+        }
+
+        .reg-invalid:before {
+            content: "\2716";
+            font-size: 10px;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="my-5">
+            <div class="page-title-wrapper">
+                <h1 class="page-title text-center">Create an Account</h1>
+
+                <div class="field-note text-center">
+                    <p class="">Already a customer? <a href="#">Log in here</a>.</p>
+                </div>
+        </section>
+        <section class="container my-5">
+            <form action="#" class="container login-form needs-validation" novalidate>
+                <fieldset class="fieldset-register">
+                    <div class="field-note">
+                        <h3 class="">Personal Information</h3>
+                    </div>
+                    <div class="form-field my-3">
+                        <div class="row g-3">
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">First Name*</label>
+                                <input class="form-control" type="firstName" name="firstName" required>
+                                <div class="invalid-feedback">
+                                    Please choose a firstName.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Last Name*</label>
+                                <input class="form-control" type="lastName" name="lastName" required>
+                                <div class="invalid-feedback">
+                                    Please choose a lastName.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Email*</label>
+                                <input class="form-control text-lowercase" placeholder="Email" type="email" id="email" autocomplete="off"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required onblur="validateEmail()" required>
+                                    <!-- <span id="email-error" class="error-message"></span> -->
+                                <div class="invalid-feedback">
+                                    Please choose a email.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Confirm Email*</label>
+                                <input class="form-control text-lowercase" type="email" name="email" id="confirm-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required onblur="validateEmail()">
+                                <!-- <span id="confirm-email-error" class="error-message"></span> -->
+                                <div class="invalid-feedback">
+                                    Please choose a confirm email.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Password*</label>
+                                <input type="password" class="form-control" id="regPassword" name="regPassword"
+                                    autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                    required placeholder="Password">
+                                <div class="invalid-feedback">
+                                    Please choose a password.
+                                </div>
+                                <div id="regMessage">
+                                    <p class="fs-6">Password must contain the following:</p>
+                                    <p id="capital" class="reg-invalid d-inline-block me-2">Uppercase</p>
+                                    <p id="small" class="reg-invalid d-inline-block me-2">lowercase</p>
+                                    <p id="special" class="reg-invalid d-inline-block me-2">special character</p>
+                                    <p id="number" class="reg-invalid d-inline-block me-2">number</p>
+                                    <p id="length" class="reg-invalid d-inline-block me-2">Minimum 8 characters</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Confirm Password*</label>
+                                <input type="password" required class="form-control" id="confirm_regPassword"
+                                    autocomplete="off" placeholder="Enter a Confirm Password">
+                                <div class="invalid-feedback">
+                                    Please choose a confirm password.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="fieldset-register">
+                    <div class="field-choice" required>
+                        <input type="checkbox" name="" class="checkbox"><label for="" class="form-label ms-2">
+                            <span>Please confirm<strong class="ms-1">you are a user of nicotine
+                                    products</strong>.</span></label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="mt-4">
+                    <div class="form-field my-3">
+                        <div class="row g-3">
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Street Address*</label>
+                                <input class="form-control" type="streetAddress" name="streetAddress" required>
+                                <div class="invalid-feedback">
+                                    Please choose a address.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">City*</label>
+                                <input class="form-control" type="city" name="city" required>
+                                <div class="invalid-feedback">
+                                    Please choose a city.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Post code*</label>
+                                <input class="form-control" type="postCode" name="postCode" required>
+                                <div class="invalid-feedback">
+                                    Please choose a post code.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Country*</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Select Country</option>
+                                    <option value="1">One</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                <label for="" class="form-label">Date of birth*</label>
+                                <input class="form-control" type="date" id="billing_dob" name="billing_dob" required>
+                                <!-- <span class="invalid-feedback">You must be at least 18 years old to use this service </span> -->
+                                <div class="invalid-feedback">
+                                    Please choose a date of birth
+                                </div>
+                            </div>
+                            <script>
+                                // according to current date
+                                let today = new Date();
+                                today.setDate(today.getDate() + 1);
+                                let minDate = new Date(today.getFullYear() - 120, today.getMonth(), today.getDate());
+                                let maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+
+
+                                let birthdateInput = document.getElementById('billing_dob');
+                                birthdateInput.min = minDate.toISOString().slice(0, 10);
+                                birthdateInput.max = maxDate.toISOString().slice(0, 10);
+                                
+                                function checkAge(dateOfBirth) {
+                                    let dobArr = dateOfBirth.split('-');
+                                    let dob = new Date(dobArr[2], dobArr[1] - 1, dobArr[0]);
+                                    let today_1 = new Date();
+                                    let age = today_1.getFullYear() - dob.getFullYear();
+                                    if (today_1 < new Date(today_1.getFullYear(), dob.getMonth(), dob.getDate())) {
+                                        age--;
+                                    }
+                                    return age >= 18;
+                                }
+
+                                // let birthdateInput_1 = document.getElementById('billing_dob');
+                                birthdateInput.addEventListener('change', () => {
+                                    let dateOfBirth = birthdateInput.value;
+                                    if (!checkAge(dateOfBirth)) {
+                                        alert('You must be at least 18 years old to use this service');
+                                        birthdateInput.value = '';
+
+                                    }
+                                });
+
+
+
+
+                            </script>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="contact-info my-4">
+                    <div class="contact-heading mb-4">
+                        <h2 class="">Contact preferences</h2>
+                    </div>
+                    <div class="contact-details">
+                        <p class="">Be the first to hear about our special offers & exclusive subscriber discounts, plus
+                            we’ll keep you posted on new flavour launches. Tell us how you'd like to stay in touch:
+                        </p>
+                    </div>
+                    <div class="checkbox-list">
+                        <ul class="list-unstyled">
+                            <li class="">
+                                <input class="form-check-input me-1" type="checkbox">
+                                Email
+                            </li>
+                            <li class="">
+                                <input class="form-check-input me-1" type="checkbox">
+                                Post
+                            </li>
+                            <li class="">
+                                <input class="form-check-input me-1" type="checkbox">
+                                SMS
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contact-content lh-1">
+                        <p class="">You can change your preferences at any time.</p>
+                        <p class="">For more information on what you are opting-in to <a href="#">click here</a>
+                        </p>
+                        <p class="">See our <a href="">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+                <fieldset>
+                    <div class="field-choice" required>
+                        <input type="checkbox" name="checkbox" class="checkbox"><label for="" class="form-label ms-2">
+                            <span>I accept the Nordic Spirit <a href="#"><strong>Terms and Conditions</strong></a>, <a
+                                    href="#"><strong>Privacy Policy</strong></a>, and <a href="#">
+                                    <strong>Cookies Policy</strong></a>.</span></label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </fieldset>
+                <div id="CheckregPasswordMatch"></div>
+
+                <div class="action-toolbar text-center mt-5 text-uppercase">
+                    <button type="submit" clbuttonss="btn btn-color">Create an Account</a>
+                </div>
+            </form>
+
+        </section>
+    </main>
+    <script>
+function validateEmail() {
+  const emailInput = document.getElementById("email");
+  const confirmEmailInput = document.getElementById("confirm-email");
+  
+  if (emailInput.value !== confirmEmailInput.value) {
+    confirmEmailInput.setCustomValidity("Email addresses do not match");
+  } else {
+    confirmEmailInput.setCustomValidity("");
+  }
+}
+// const emailInput = document.getElementById("email");
+// const confirmEmailInput = document.getElementById("c_email");
+
+// confirmEmailInput.addEventListener("input", () => {
+//   if (confirmEmailInput.value !== emailInput.value) {
+//     confirmEmailInput.setCustomValidity("Confirm Email Is Not Same As Email.");
+//   } else {
+//     confirmEmailInput.setCustomValidity("");
+//   }
+// });
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        // <!-- password validation start 
+
+        var myInput = document.getElementById("regPassword");
+        var small = document.getElementById("small");
+        var capital = document.getElementById("capital");
+        var special = document.getElementById("special");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+
+        // When the user clicks on the Password field, show the message box
+        myInput.onfocus = function () {
+            document.getElementById("regMessage").style.display = "block";
+        }
+
+        // When the user clicks outside of the Password field, hide the message box
+        myInput.onblur = function () {
+            document.getElementById("regMessage").style.display = "none";
+        }
+
+        // When the user starts to type something inside the Password field
+        myInput.onkeyup = function () {
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/;
+            if (myInput.value.match(lowerCaseLetters)) {
+                small.classList.remove("reg-invalid");
+                small.classList.add("reg-valid");
+            } else {
+                small.classList.remove("reg-valid");
+                small.classList.add("reg-invalid");
+            }
+
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/;
+            if (myInput.value.match(upperCaseLetters)) {
+                capital.classList.remove("reg-invalid");
+                capital.classList.add("reg-valid");
+            } else {
+                capital.classList.remove("reg-valid");
+                capital.classList.add("reg-invalid");
+            }
+
+            // Validate special character letters
+            var SpecialCharacter = /[!,%,&,@,#,$,^,*,?,_,~]/;
+            if (myInput.value.match(SpecialCharacter)) {
+                special.classList.remove("reg-invalid");
+                special.classList.add("reg-valid");
+            } else {
+                special.classList.remove("reg-valid");
+                special.classList.add("reg-invalid");
+            }
+
+            // Validate numbers
+            var numbers = /[0-9]/;
+            if (myInput.value.match(numbers)) {
+                number.classList.remove("reg-invalid");
+                number.classList.add("reg-valid");
+            } else {
+                number.classList.remove("reg-valid");
+                number.classList.add("reg-invalid");
+            }
+
+            // Validate length
+            if (myInput.value.length >= 8) {
+                length.classList.remove("reg-invalid");
+                length.classList.add("reg-valid");
+            } else {
+                length.classList.remove("reg-valid");
+                length.classList.add("reg-invalid");
+            }
+        }
+
+
+                                // according to year
+        /*
+        const today = new Date();
+        const minYear = today.getFullYear() - 100; // 100 years before today
+        const maxYear = today.getFullYear() - 18; // 18 years before today
+
+        const birthdateInput = document.getElementById('billing_dob');
+        birthdateInput.min = `${minYear}-01-01`; // Set the minimum year with month and date to January 1st
+        birthdateInput.max = `${maxYear}-12-31`; // Set the maximum year with month and date to December 31st
+        */
+                            //    another way
+        /*  //    another way
+            const today = new Date();
+            const minYear = today.getFullYear() - 100;
+            const maxYear = today.getFullYear() - 18;
+
+            const birthdateInput = document.getElementById('billing_dob');
+            birthdateInput.min = new Date(minYear, 0, 1).toISOString().slice(0, 10);
+            birthdateInput.max = new Date(maxYear, 11, 31).toISOString().slice(0, 10); */
+
+    </script>
+</body>
+
+</html>
