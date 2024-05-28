@@ -1,0 +1,128 @@
+/* header css start */
+/* Media query for small devices */
+@media screen and (max-width: 769px) {
+    .toggle-button {
+        display: block;
+        padding: 5px 15px;
+        background: #000;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        /* background-color: #333; */
+        width: 100%;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+        background: #fff;
+        z-index: 1;
+    }
+
+    .nav-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+        margin: 4px 60px;
+    }
+    /* owl carousel responsive css */
+    .single-banner-slide-img {
+        height: 80vh;
+    }
+    .single-banner-slide {
+        padding: 20px 0;
+    }
+    .single-banner-slide a {
+        margin-top: 5px;
+    }
+    /* owl carousel responsive css end */
+  
+}
+/* Media query to hide toggle button for larger devices */
+@media screen and (min-width: 769px) {
+    .toggle-button {
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 1024px) {
+    .logo{
+        max-width: 100px;
+    }
+    .nav-link {
+        padding: 0px 4px;
+    }
+    /* owl carousel responsive css start */
+    .single-banner-slide {
+        padding: 35px 0;
+    }
+    .single-banner-slide h2{
+        font-size: 20px;
+    }
+    .single-banner-slide a {
+        margin-top: 5px;
+    }
+    .single-banner-slide p{
+        max-width: none;
+    }
+   
+    /* owl carousel responsive css end */
+    .D23-container {
+        text-align: center;
+        margin: 20px 5rem;
+    }
+    
+    .D23-container h2 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+}
+/* header css end */
+/* footer css start */
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .footer-content-column {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+@media (max-width: 576px) {
+    .footer-content-column {
+        flex: 1 1 100%;
+    }
+}
+@media (max-width: 768px) {
+    .footer .copyright p,
+    .footer .copyright .col-md-6:last-child p {
+      margin: 5px 0;
+      text-align: center;
+    }
+  }
+/*START NEWSLETTER CSS*/
+
+@media only screen and (max-width:768px) { 
+    .subscribe__input{padding: 0 0 0 1px;}
+    }
+    @media only screen and (max-width:768px) { 
+        .subscribe__btn{right:0px;}
+        }
+/*END NEWSLETTER CSS*/
+/*START SOCIAL PROFILE CSS*/
+
+@media only screen and (max-width:768px) { 
+    .social_profile ul li a{margin-right:10px;margin-bottom:10px;}
+    }
+    @media only screen and (max-width:480px) { 
+    .social_profile ul li a{
+        width:40px;
+        height:40px;
+        line-height:40px;
+    }
+    }
+/*END SOCIAL PROFILE CSS*/
+
+  /* footer css end */
