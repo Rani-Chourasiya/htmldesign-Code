@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amazon navigation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* nav and sidebar ---------------------------------------------------------------------------------------------- */
+nav {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  height: 70px;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 20px;
+}
+.profilre_dropdown{
+  padding: 10px 20px;
+  z-index: 9999;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: absolute;
+  top: 60px;
+  right: 5px;
+  background-color: #fff;
+  color: black;
+  display: none;
+}
+.toggle_profile_dropdown{
+  display: block;
+}
+.profilre_dropdown ul{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.profilre_dropdown ul li{
+  list-style: none;
+}
+.profilre_dropdown ul li a{
+  color: black;
+  text-decoration: none;
+}
+nav img {
+  border: 2px solid black;
+  padding: 5px 10px;
+  width: 150px;
+}
+nav img:hover {
+  border: 2px solid #fff;
+}
+
+nav .searchbar {
+  display: flex;
+  gap: 0;
+}
+nav .searchbar button {
+  border: none;
+  outline: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 20px;
+  padding: 0 15px;
+  background-color: rgb(242, 242, 182);
+}
+nav input {
+  width: 900px;
+  height: 40px;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-size: 18px;
+}
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+nav .links {
+  display: flex;
+  gap: 20px;
+  font-size: 30px;
+
+}
+.links i{
+  cursor:pointer
+}
+.bell,.cart{
+  position:relative
+}
+.links span{
+  position:absolute;
+  font-size:15px;
+  width:20px;
+  height:20px;
+  background:orange;
+  color:black;
+  border-radius:50%;
+ text-align:center;
+  font-weight:bold;
+  left:20px;
+  cursor:pointer;
+  
+    
+}
+.bell span{
+  left:15px
+}
+.nav2 {
+  display: flex;
+  background-color: #232f3e;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+.nav2 ul {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+}
+.nav2 ul li {
+  list-style: none;
+}
+.nav2 ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #232f3e;
+  padding: 5px 8px;
+}
+.nav2 ul li a:hover,
+.nav2 .menu:hover,
+.nav2 .downloadApp a:hover {
+  border: 1px solid #fff;
+}
+.nav2 .menu {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  border: 1px solid #232f3e;
+  padding: 5px 8px;
+}
+.nav2 .downloadApp a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  border: 1px solid #232f3e;
+  padding: 5px 8px;
+}
+.sidebar {
+  top: 0;
+  background-color: #fff;
+  color: black;
+  position: fixed;
+  left: -100%;
+  height: 100vh;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  overflow-y: scroll;
+  transition: 0.3s;
+  z-index: 999;
+}
+.sidebar .top {
+  padding: 10px 30px;
+  background-color: #232f3e;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar .top button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+.sidebar ul {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+}
+.sidebar ul .title {
+  font-weight: bold;
+  font-size: 22px;
+}
+.sidebar ul li {
+  list-style: none;
+}
+.sidebar ul li a {
+  color: #000;
+  text-decoration: none;
+}
+.show {
+  left: 0;
+}
+
+
+
+
+/* main */
+
+
+
+@media only screen and (max-width: 1760px) {
+  .nav2 ul li:nth-last-of-type(1),
+  .nav2 ul li:nth-last-of-type(2),
+  .nav2 ul li:nth-last-of-type(3) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  .nav2 .downloadApp a {
+    font-size: 15px;
+  }
+  .nav2 {
+    padding: 0 10px;
+  }
+  .nav2 ul {
+    display: flex;
+    gap: 0;
+  }
+  .nav2 ul li a {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 1288px) {
+  nav input {
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 1105px) {
+  .nav2 ul li:nth-last-of-type(1),
+  .nav2 ul li:nth-last-of-type(2),
+  .nav2 ul li:nth-last-of-type(3),
+  .nav2 ul li:nth-last-of-type(4),
+  .nav2 ul li:nth-last-of-type(5) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  nav input {
+    width: 600px;
+  }
+  .nav2 ul {
+    display: flex;
+    gap: 0;
+  }
+}
+@media only screen and (max-width: 998px) {
+  nav input {
+    width: 400px;
+  }
+  .nav2 ul {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 804px) {
+  nav input {
+    width: 300px;
+  }
+  nav img {
+    width: 100px;
+  }
+  nav .links {
+    gap: 15px;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 692px) {
+  nav input {
+    width: 200px;
+    height: 30px;
+  }
+  nav .searchbar button {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 498px) {
+  nav input {
+    width: 150px;
+  }
+  nav img {
+    width: 70px;
+  }
+  nav .links {
+    gap: 10px;
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 426px) {
+  nav {
+    padding: 0 10px;
+  }
+  .nav2 .menu {
+    font-size: 15px;
+    padding: 3px 5px;
+  }
+  .nav2 .downloadApp a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    padding: 3px 5px;
+  }
+  .sidebar {
+    left: -120%;
+  }
+  .show {
+    left: 0;
+  }
+  .sidebar {
+    width: 100%;
+    gap: 15px;
+  }
+  .sidebar .top {
+    padding: 10px 30px;
+    background-color: #232f3e;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .sidebar .top button {
+    font-size: 20px;
+  }
+  .sidebar ul {
+    padding: 0 15px;
+    gap: 15px;
+    font-size: 15px;
+  }
+  .sidebar ul .title {
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .nav2 .menu {
+    border: none;
+    padding: 0;
+    font-size: 13px;
+  }
+  .nav2 .downloadApp a {
+    font-size: 13px;
+    border: none;
+    padding: 0;
+  }
+  nav .links div:nth-of-type(1),
+  nav .links div:nth-of-type(3) {
+    display: none;
+  }
+}
+
+    </style>
+</head>
+<body>
+    
+    <section class="nav__side">
+        <nav>
+            <div class="barand"><img src="https://i.postimg.cc/FH1Qcjqg/whiteamazon.png" alt=""></div>
+            <div class="searchbar">
+                <input type="text">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="links">
+                <div class="bell">
+                    <i class="fa-solid fa-bell"></i>
+                  <span>3</span>
+                </div>
+                <div class="cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                      <span>5</span>
+                </div>
+                <div class="user" id="profile_dropdown">
+                    <i class="fa-regular fa-circle-user"></i>
+                </div>
+            </div>
+            <div class="profilre_dropdown">
+                <ul>
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Sign in</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="nav2">
+            <div class="menu showbtn">
+                <i class="fa-solid fa-bars "></i>
+                <span>All</span>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Amazon miniTv</a></li>
+                    <li><a href="#">Sell</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Today's Deal</a></li>
+                    <li><a href="#">Mobiles</a></li>
+                    <li><a href="#">New Release</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Prime</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Gift ideas</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                </ul>
+            </div>
+            <div class="downloadApp">
+                <a href="#"> Shoping Make Easy | Download the app</a>
+            </div>
+        </div>
+        <div class="sidebar" id="sidemenu">
+            <div class="top">
+                <div><i class="fa-regular fa-circle-user"></i>
+                    <span>Hello, sign in</span>
+                </div>
+                <div> <button class="showbtn"><i class="fa-solid fa-xmark"></i></button></div>
+            </div>
+            <ul>
+                <li>
+                    <div class="title">Trending</div>
+                </li>
+                <li><a href="#">Best Seller</a></li>
+                <li><a href="#">New Release</a></li>
+                <li><a href="#">Movers and Shakers</a></li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <div class="title">Digital contetn And Divices</div>
+                </li>
+                <li><a href="#">Best Seller</a></li>
+                <li><a href="#">New Release</a></li>
+                <li><a href="#">Movers and Shakers</a></li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <div class="title">Shop by category</div>
+                </li>
+                <li><a href="#">Best Seller</a></li>
+                <li><a href="#">New Release</a></li>
+                <li><a href="#">Movers and Shakers</a></li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <div class="title">Programs & Features</div>
+                </li>
+                <li><a href="#">Best Seller</a></li>
+                <li><a href="#">New Release</a></li>
+                <li><a href="#">Movers and Shakers</a></li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <div class="title">Help & settings</div>
+                </li>
+                <li><a href="#">Best Seller</a></li>
+                <li><a href="#">New Release</a></li>
+                <li><a href="#">Movers and Shakers</a></li>
+            </ul>
+        </div>
+    </section>
+    <script>
+        Array.from(document.getElementsByClassName("showbtn")).map((btn) => {
+            btn.addEventListener("click", () => {
+                console.log("click")
+                document.getElementById("sidemenu").classList.toggle("show")
+            })
+        })
+
+        document.getElementById("profile_dropdown").addEventListener("click",()=>{
+            document.getElementsByClassName("profilre_dropdown")[0].classList.toggle("toggle_profile_dropdown")
+        })
+
+    </script>
+</body>
+</html>

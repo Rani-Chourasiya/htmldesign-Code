@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sticky sidebar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* ul {
+  list-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+#app #navigation-bar {
+  --icon-horizontal-margin: 1em;
+  --icons-size: 1.5em;
+  --open-nav-width: 10em;
+  --closed-nav-width: 4em;
+  --controller-right-position: 50%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  overflow-x: hidden;
+  background: #F7F7F7;
+  width: var(--closed-nav-width);
+  height: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  transition: width 0.1s ease-in;
+}
+#app #navigation-bar.open {
+  width: var(--open-nav-width);
+}
+#app #navigation-bar .controller {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: var(--controller-right-position);
+  top: 1.5em;
+  transform: translate(50%, 0);
+}
+#app #navigation-bar .controller span {
+  color: black;
+  font-size: 2rem;
+}
+#app #navigation-bar .items-container {
+  height: fit-content;
+  margin-top: 5em;
+}
+#app #navigation-bar .items-container .item {
+  width: 100%;
+  height: 3em;
+}
+#app #navigation-bar .items-container .item:hover {
+  background: #fcfcfc;
+}
+#app #navigation-bar .items-container .item .hyper-link {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: nowrap;
+}
+#app #navigation-bar .items-container .item .hyper-link .icon-wrapper {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: var(--closed-nav-width);
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#app #navigation-bar .items-container .item .hyper-link .icon-wrapper span {
+  font-size: var(--icons-size);
+}
+#app #navigation-bar .items-container .item .hyper-link .item-text {
+  white-space: nowrap;
+}
+#app #main {
+  width: 100%;
+  height: 200vh;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+    </style>
+</head>
+<body>
+    <!-- <span class="material-symbols-outlined"></span> -->
+
+<div id="app">
+    <nav id="navigation-bar">
+      <button class="controller" title="open navigation bar">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <ul class="items-container">
+        <li class="item" title="home">
+          <a href="#home" class="hyper-link">
+            <div class="icon-wrapper">
+              <span class="material-symbols-outlined">home</span>
+            </div>
+            <span class="item-text">Home</span>
+          </a>
+        </li>
+        <li class="item" title="book">
+          <a href="#books" class="hyper-link">
+            <div class="icon-wrapper">
+              <span class="material-symbols-outlined">book</span>
+            </div>
+            <span class="item-text">Books</span>
+          </a>
+        </li>
+        <li class="item">
+          <a href="#saved" class="hyper-link">
+            <div class="icon-wrapper">
+              <span class="material-symbols-outlined">save</span>
+            </div>
+            <span class="item-text">Saved</span>
+          </a>
+        </li>
+        <li class="item" title="shopping cart">
+          <a href="#cart" class="hyper-link">
+            <div class="icon-wrapper">
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </div>
+            <span class="item-text">Cart</span>
+          </a>
+        </li>
+        <li class="item" title="profile">
+          <a href="#profile" class="hyper-link">
+            <div class="icon-wrapper">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <span class="item-text">Profile</span>
+          </a>
+        </li>
+        <li class="item" title="settings">
+          <a href="#setting" class="hyper-link">
+            <div class="icon-wrapper">
+              <span class="material-symbols-outlined">Settings</span>
+            </div>
+            <span class="item-text">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main">
+      <div class="container">
+        
+      </div>
+    </main>
+  </div>
+  <script>
+    const $navigationBarController = document.querySelector("#navigation-bar .controller");
+const $navigation = document.querySelector("#navigation-bar");
+
+function toggleNavigationBarState() {
+  var isNavOpen = () => $navigation.classList.contains("open");
+  
+  $navigation.classList.toggle("open");
+  
+  changeControllerPosition(isNavOpen());
+  changeControllerIcon(isNavOpen());
+}
+
+function changeControllerPosition(isOpen) {
+  switch(isOpen) {
+    case true:      
+      $navigation.style.setProperty("--controller-right-position", "25%");
+      break;
+
+    case false:
+      $navigation.style.setProperty("--controller-right-position", "50%");
+      break;
+  }
+}
+
+function changeControllerIcon(isOpen) {
+  var icon = $navigationBarController.querySelector("span");
+  
+  switch(isOpen) {
+    case true:
+      icon.innerText = "close";
+      $navigationBarController.setAttribute("title", "close navigation bar");
+      break;
+    
+    case false:
+      icon.innerText = "menu"; 
+      $navigationBarController.setAttribute("title", "open navigation bar");
+
+      break;
+  }
+}
+
+// function insertBoxInsideMain() {
+//   function getRandomColor() {
+//     var letters = '0123456789ABCDEF';
+//     var color = '#';
+//     for (var i = 0; i < 6; i++) {
+//       color += letters[Math.floor(Math.random() * 16)];
+//     }
+//     return color;
+//   }
+  
+  
+// }
+
+$navigationBarController.addEventListener("click", toggleNavigationBarState);
+  </script>
+</body>
+</html>
